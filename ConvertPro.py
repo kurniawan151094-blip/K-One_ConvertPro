@@ -14,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ================= CUSTOM CSS (THEME: SUNSET FLAME & CORAL VIOLET) =================
+# ================= CUSTOM CSS (CLEAN, MINIMALIS & ELEGAN) =================
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
@@ -39,7 +39,7 @@ st.markdown("""
         visibility: hidden !important;
     }
 
-    /* 2. TOMBOL HAMBURGER (K-ONE STYLE) */
+    /* 2. TOMBOL HAMBURGER (CLEAN & SUBTLE) */
     [data-testid="stSidebarCollapsedControl"],
     [data-testid="collapsedControl"] {
         display: flex !important;
@@ -56,12 +56,12 @@ st.markdown("""
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        width: 50px !important;
-        height: 50px !important;
-        background: linear-gradient(135deg, #F59E0B, #EF4444) !important;
-        border-radius: 14px !important;
+        width: 48px !important;
+        height: 48px !important;
+        background: linear-gradient(135deg, #F97316, #EA580C) !important;
+        border-radius: 12px !important;
         border: none !important;
-        box-shadow: 0 4px 15px rgba(239, 68, 68, 0.45) !important;
+        box-shadow: 0 2px 10px rgba(234, 88, 12, 0.25) !important;
         align-items: center !important;
         justify-content: center !important;
         cursor: pointer !important;
@@ -70,15 +70,15 @@ st.markdown("""
 
     [data-testid="stSidebarCollapsedControl"] button:hover,
     [data-testid="collapsedControl"] button:hover {
-        transform: scale(1.06) !important;
+        transform: scale(1.04) !important;
     }
 
     [data-testid="stSidebarCollapsedControl"] svg,
     [data-testid="collapsedControl"] svg {
         display: block !important;
         visibility: visible !important;
-        width: 28px !important;
-        height: 28px !important;
+        width: 26px !important;
+        height: 26px !important;
         stroke: #ffffff !important;
         fill: #ffffff !important;
         color: #ffffff !important;
@@ -93,82 +93,89 @@ st.markdown("""
         max-width: 680px;
     }
 
-    /* 4. GAYA SIDEBAR K-ONE CONVERTPRO */
+    /* 4. GAYA SIDEBAR MINIMALIS & BERSIH */
     .sidebar-brand-pill {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        padding: 5px 14px;
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 1px;
+        gap: 6px;
+        padding: 4px 12px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.8px;
         text-transform: uppercase;
         border-radius: 999px;
-        background: rgba(245, 158, 11, 0.14);
-        border: 1px solid rgba(245, 158, 11, 0.35);
-        color: #D97706;
+        background: #FFF7ED;
+        border: 1px solid #FFEDD5;
+        color: #EA580C;
         margin-bottom: 6px;
     }
 
     .sidebar-brand-title {
-        font-size: 1.55rem;
+        font-size: 1.45rem;
         font-weight: 900;
-        letter-spacing: -0.6px;
-        background: linear-gradient(125deg, #F59E0B 0%, #EF4444 50%, #7C3AED 100%);
+        letter-spacing: -0.5px;
+        background: linear-gradient(125deg, #F97316 0%, #DC2626 50%, #9333EA 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 2px 10px rgba(239, 68, 68, 0.35));
-        margin-bottom: 1.2rem;
+        margin-bottom: 1.1rem;
     }
 
-    /* TOMBOL MENU SIDEBAR BESAR */
+    /* KOTAK TOMBOL MENU SIDEBAR (CLEAN CARD) */
     [data-testid="stSidebar"] .stButton > button {
-        font-size: 1.22rem !important;
-        min-height: 66px !important;
-        padding: 1rem 1.3rem !important;
-        margin-bottom: 1rem !important;
-        border-radius: 18px !important;
+        font-size: 1.12rem !important;
+        min-height: 60px !important;
+        padding: 0.85rem 1.15rem !important;
+        margin-bottom: 0.75rem !important;
+        border-radius: 14px !important;
         text-align: left !important;
         justify-content: flex-start !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        border: 2px solid rgba(239, 68, 68, 0.25) !important;
-        background: rgba(255, 255, 255, 0.75) !important;
-        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05) !important;
+        transition: all 0.2s ease !important;
+        border: 1px solid #E2E8F0 !important;
+        background: #FFFFFF !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
     }
 
-    /* WARNA TEKS & ICON MENU BARU */
+    /* TEKS & ICON MENU (TEGAS, TAJAM, TANPA BLUR) */
     [data-testid="stSidebar"] .stButton > button p,
     [data-testid="stSidebar"] .stButton > button span,
     [data-testid="stSidebar"] .stButton > button div {
-        font-size: 1.18rem !important;
-        font-weight: 900 !important;
+        font-size: 1.06rem !important;
+        font-weight: 700 !important;
         letter-spacing: -0.2px !important;
         display: flex !important;
         align-items: center !important;
-        gap: 12px !important;
-        background: linear-gradient(125deg, #D97706 0%, #DC2626 50%, #7C3AED 100%) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.25)) !important;
+        gap: 11px !important;
+        color: #334155 !important;
+        background: none !important;
+        -webkit-text-fill-color: #334155 !important;
+        filter: none !important;
     }
 
-    /* MENU AKTIF */
+    /* KETIKA MENU AKTIF (LEMBUT & ELEGAN) */
     [data-testid="stSidebar"] .stButton > button[kind="primary"],
     [data-testid="stSidebar"] .stButton > button[data-testid="baseButton-primary"] {
-        background: linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(239, 68, 68, 0.2) 50%, rgba(124, 58, 237, 0.18) 100%) !important;
-        border: 2.2px solid #EF4444 !important;
-        box-shadow: 0 6px 24px rgba(239, 68, 68, 0.38), inset 0 0 14px rgba(245, 158, 11, 0.15) !important;
-        transform: translateX(6px) scale(1.02) !important;
+        background: #FFF7ED !important;
+        border: 1.5px solid #F97316 !important;
+        box-shadow: 0 2px 8px rgba(249, 115, 22, 0.12) !important;
+        transform: translateX(3px) !important;
     }
 
-    /* MENU HOVER */
+    [data-testid="stSidebar"] .stButton > button[kind="primary"] p,
+    [data-testid="stSidebar"] .stButton > button[data-testid="baseButton-primary"] p {
+        color: #C2410C !important;
+        -webkit-text-fill-color: #C2410C !important;
+        font-weight: 800 !important;
+    }
+
+    /* KETIKA MENU DI-HOVER */
     [data-testid="stSidebar"] .stButton > button:hover {
-        transform: translateX(6px) scale(1.02) !important;
-        border-color: #F59E0B !important;
-        box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35) !important;
+        transform: translateX(2px) !important;
+        border-color: #FDBA74 !important;
+        background: #FAFAFA !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
     }
 
-    /* 5. JUDUL UTAMA (HERO) K-ONE */
+    /* 5. HERO UTAMA (LEBIH CLEAN & NYAMAN DI MATA) */
     .brand-hero {
         position: relative;
         text-align: center;
@@ -177,90 +184,66 @@ st.markdown("""
         margin-bottom: 0.8rem;
     }
 
-    .brand-hero::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 290px;
-        height: 85px;
-        background: radial-gradient(circle, rgba(245, 158, 11, 0.28) 0%, rgba(239, 68, 68, 0.16) 50%, transparent 75%);
-        filter: blur(24px);
-        z-index: 0;
-        pointer-events: none;
-    }
-
     .brand-pill {
-        position: relative;
-        z-index: 1;
         display: inline-flex;
         align-items: center;
         gap: 6px;
         padding: 4px 14px;
-        font-size: 0.74rem;
+        font-size: 0.72rem;
         font-weight: 800;
-        letter-spacing: 1.2px;
+        letter-spacing: 1px;
         text-transform: uppercase;
         border-radius: 999px;
-        background: rgba(245, 158, 11, 0.14);
-        border: 1px solid rgba(245, 158, 11, 0.35);
-        color: #D97706;
+        background: #FFF7ED;
+        border: 1px solid #FFEDD5;
+        color: #EA580C;
         margin-bottom: 6px;
     }
 
     .brand-title {
-        position: relative;
-        z-index: 1;
-        font-size: 2.25rem;
+        font-size: 2.2rem;
         font-weight: 900;
-        letter-spacing: -0.8px;
+        letter-spacing: -0.7px;
         line-height: 1.15;
         margin: 0;
         display: inline-block;
-        background: linear-gradient(125deg, #F59E0B 0%, #EF4444 48%, #7C3AED 100%);
+        background: linear-gradient(125deg, #F97316 0%, #DC2626 50%, #9333EA 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 4px 16px rgba(239, 68, 68, 0.38));
     }
 
     .brand-title .pro-badge {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         vertical-align: super;
         margin-left: 6px;
-        padding: 3px 8px;
-        border-radius: 8px;
+        padding: 2px 8px;
+        border-radius: 6px;
         font-weight: 900;
-        letter-spacing: 0.6px;
-        background: linear-gradient(135deg, #EF4444, #F59E0B);
+        letter-spacing: 0.5px;
+        background: linear-gradient(135deg, #EA580C, #F97316);
         color: #FFFFFF !important;
         -webkit-text-fill-color: #FFFFFF !important;
-        box-shadow: 0 3px 10px rgba(239, 68, 68, 0.45);
     }
 
     .brand-divider {
-        position: relative;
-        z-index: 1;
-        width: 56px;
-        height: 4px;
-        background: linear-gradient(90deg, #F59E0B, #EF4444, #7C3AED);
+        width: 46px;
+        height: 3.5px;
+        background: linear-gradient(90deg, #F97316, #DC2626);
         border-radius: 99px;
-        margin: 7px auto 10px auto;
+        margin: 8px auto 10px auto;
     }
 
     .brand-sub {
-        position: relative;
-        z-index: 1;
         display: inline-flex;
         align-items: center;
         gap: 7px;
-        font-size: 0.86rem;
+        font-size: 0.85rem;
         color: #64748B;
         font-weight: 600;
-        background: rgba(148, 163, 184, 0.1);
+        background: #F8FAFC;
         padding: 4px 14px;
         border-radius: 20px;
-        border: 1px solid rgba(148, 163, 184, 0.2);
+        border: 1px solid #E2E8F0;
     }
 
     .pulse-dot {
@@ -268,14 +251,6 @@ st.markdown("""
         height: 7px;
         background-color: #10B981;
         border-radius: 50%;
-        box-shadow: 0 0 8px #10B981;
-        animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-        0% { transform: scale(0.9); opacity: 0.7; }
-        50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px #10B981; }
-        100% { transform: scale(0.9); opacity: 0.7; }
     }
 
     /* 6. KARTU METRIK TOTAL */
@@ -296,7 +271,6 @@ st.markdown("""
     .metric-card.highlight {
         background: #FFF7ED;
         border: 1.5px solid #FDBA74;
-        box-shadow: 0 4px 14px rgba(245, 158, 11, 0.12);
     }
     .metric-label {
         font-size: 0.68rem;
@@ -312,7 +286,7 @@ st.markdown("""
         margin-top: 3px;
     }
     .metric-card.highlight .metric-value {
-        color: #EA580C;
+        color: #C2410C;
     }
     .badge-hemat {
         display: inline-block;
@@ -331,41 +305,40 @@ st.markdown("""
         margin-bottom: 12px;
     }
     [data-testid="stDownloadButton"] > button {
-        background: linear-gradient(135deg, #F59E0B 0%, #EF4444 50%, #7C3AED 100%) !important;
+        background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%) !important;
         color: #FFFFFF !important;
-        font-size: 1.05rem !important;
+        font-size: 1.02rem !important;
         font-weight: 800 !important;
-        padding: 0.95rem 1.6rem !important;
-        border-radius: 14px !important;
+        padding: 0.9rem 1.5rem !important;
+        border-radius: 12px !important;
         border: none !important;
-        box-shadow: 0 6px 20px rgba(239, 68, 68, 0.42) !important;
-        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(234, 88, 12, 0.28) !important;
+        transition: all 0.2s ease !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         letter-spacing: 0.3px;
     }
     [data-testid="stDownloadButton"] > button:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 10px 28px rgba(239, 68, 68, 0.55) !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35) !important;
         color: #FFFFFF !important;
     }
 
     /* 8. TOMBOL UNDUH SATUAN */
     div[data-testid="stExpander"] [data-testid="stDownloadButton"] > button {
-        background: linear-gradient(135deg, #F59E0B, #EF4444) !important;
+        background: #EA580C !important;
         color: #FFFFFF !important;
         font-size: 0.85rem !important;
         font-weight: 700 !important;
         padding: 0.45rem 0.9rem !important;
-        border-radius: 10px !important;
+        border-radius: 8px !important;
         border: none !important;
-        box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
+        box-shadow: none !important;
         margin: 0 !important;
     }
     div[data-testid="stExpander"] [data-testid="stDownloadButton"] > button:hover {
-        transform: translateY(-1px) !important;
-        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.45) !important;
+        background: #C2410C !important;
     }
 
     /* 9. SPINNER BOLA MELAYANG (HUD) */
@@ -375,9 +348,9 @@ st.markdown("""
         left: 0 !important;
         width: 100vw !important;
         height: 100vh !important;
-        background: rgba(15, 23, 42, 0.7) !important;
-        backdrop-filter: blur(8px) !important;
-        -webkit-backdrop-filter: blur(8px) !important;
+        background: rgba(15, 23, 42, 0.6) !important;
+        backdrop-filter: blur(6px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
         z-index: 99999999 !important;
         display: flex !important;
         align-items: center !important;
@@ -385,32 +358,26 @@ st.markdown("""
     }
 
     .hud-card {
-        background: rgba(24, 24, 27, 0.95) !important;
-        border: 1.5px solid rgba(239, 68, 68, 0.45) !important;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(239, 68, 68, 0.35) !important;
-        border-radius: 24px !important;
-        padding: 26px 36px !important;
+        background: #1E293B !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4) !important;
+        border-radius: 20px !important;
+        padding: 24px 32px !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        min-width: 230px !important;
-        animation: hudPop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    }
-
-    @keyframes hudPop {
-        0% { transform: scale(0.85); opacity: 0; }
-        100% { transform: scale(1); opacity: 1; }
+        min-width: 220px !important;
     }
 
     .hud-spinner-wrap {
         position: relative !important;
-        width: 86px !important;
-        height: 86px !important;
+        width: 80px !important;
+        height: 80px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        margin-bottom: 14px !important;
+        margin-bottom: 12px !important;
     }
 
     .hud-spinner-ring {
@@ -418,11 +385,9 @@ st.markdown("""
         width: 100% !important;
         height: 100% !important;
         border-radius: 50% !important;
-        border: 5px solid rgba(255, 255, 255, 0.08) !important;
-        border-top: 5px solid #F59E0B !important;
-        border-right: 5px solid #EF4444 !important;
-        border-bottom: 5px solid #7C3AED !important;
-        box-shadow: 0 0 16px rgba(239, 68, 68, 0.45) !important;
+        border: 4px solid rgba(255, 255, 255, 0.1) !important;
+        border-top: 4px solid #F97316 !important;
+        border-right: 4px solid #DC2626 !important;
         animation: hudSpin 0.9s linear infinite !important;
     }
 
@@ -432,20 +397,17 @@ st.markdown("""
     }
 
     .hud-pct-text {
-        font-size: 1.18rem !important;
-        font-weight: 900 !important;
-        background: linear-gradient(135deg, #F59E0B, #EF4444) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
+        font-size: 1.15rem !important;
+        font-weight: 800 !important;
+        color: #F8FAFC !important;
         z-index: 2 !important;
     }
 
     .hud-msg-text {
-        font-size: 0.9rem !important;
-        font-weight: 700 !important;
-        color: #F8FAFC !important;
+        font-size: 0.88rem !important;
+        font-weight: 600 !important;
+        color: #CBD5E1 !important;
         text-align: center !important;
-        letter-spacing: 0.3px !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -469,11 +431,11 @@ def format_size(size_in_bytes):
 def show_download_loading(kategori="gambar", is_bundle=False, file_name=None):
     nama_label = "Bundle ZIP" if is_bundle else (f"'{file_name}'" if file_name else "Berkas")
     stages = [
-        (15, f"Menyiapkan {nama_label}...", 0.4),
-        (45, "Mengemas & Memadatkan...", 0.5),
-        (75, "Mengoptimalkan File...", 0.6),
-        (95, "Mengirim ke Perangkat...", 0.5),
-        (100, "Selesai!", 0.4)
+        (15, f"Menyiapkan {nama_label}...", 0.35),
+        (45, "Mengemas & Memadatkan...", 0.45),
+        (75, "Mengoptimalkan File...", 0.5),
+        (95, "Mengirim ke Perangkat...", 0.4),
+        (100, "Selesai!", 0.3)
     ]
     for pct, msg, delay in stages:
         clean_html = f'<div class="hud-overlay"><div class="hud-card"><div class="hud-spinner-wrap"><div class="hud-spinner-ring"></div><span class="hud-pct-text">{pct}%</span></div><div class="hud-msg-text">{msg}</div></div></div>'
@@ -515,7 +477,7 @@ if st.session_state.close_sidebar_trigger:
     """, height=0, width=0)
 
 
-# ================= MENU SIDEBAR K-ONE =================
+# ================= MENU SIDEBAR K-ONE (CLEAN) =================
 with st.sidebar:
     st.markdown("""
         <div class="sidebar-brand-pill">⚡ K-ONE SUITE</div>
