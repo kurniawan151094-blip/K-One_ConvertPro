@@ -8,13 +8,13 @@ from pypdf import PdfReader, PdfWriter
 
 # ================= KONFIGURASI HALAMAN =================
 st.set_page_config(
-    page_title="CompressPro - Batch Compressor",
+    page_title="K-ONE CONVERTPRO PDF",
     page_icon="⚡",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
 
-# ================= CUSTOM CSS (UI MODERN, MENU BESAR & SENADA) =================
+# ================= CUSTOM CSS (THEME: SUNSET FLAME & CORAL VIOLET) =================
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
@@ -39,7 +39,7 @@ st.markdown("""
         visibility: hidden !important;
     }
 
-    /* 2. TOMBOL HAMBURGER ASLI (>>) */
+    /* 2. TOMBOL HAMBURGER (K-ONE STYLE) */
     [data-testid="stSidebarCollapsedControl"],
     [data-testid="collapsedControl"] {
         display: flex !important;
@@ -58,10 +58,10 @@ st.markdown("""
         opacity: 1 !important;
         width: 50px !important;
         height: 50px !important;
-        background: linear-gradient(135deg, #2563EB, #4F46E5) !important;
+        background: linear-gradient(135deg, #F59E0B, #EF4444) !important;
         border-radius: 14px !important;
         border: none !important;
-        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.45) !important;
+        box-shadow: 0 4px 15px rgba(239, 68, 68, 0.45) !important;
         align-items: center !important;
         justify-content: center !important;
         cursor: pointer !important;
@@ -84,7 +84,7 @@ st.markdown("""
         color: #ffffff !important;
     }
 
-    /* 3. LAYOUT KONTEN UTAMA */
+    /* 3. LAYOUT UTAMA */
     .main .block-container {
         padding-top: 1rem !important;
         padding-bottom: 2rem !important;
@@ -93,7 +93,7 @@ st.markdown("""
         max-width: 680px;
     }
 
-    /* 4. GAYA MENU SIDEBAR DIPERBESAR & MENARIK */
+    /* 4. GAYA SIDEBAR K-ONE CONVERTPRO */
     .sidebar-brand-pill {
         display: inline-flex;
         align-items: center;
@@ -104,24 +104,24 @@ st.markdown("""
         letter-spacing: 1px;
         text-transform: uppercase;
         border-radius: 999px;
-        background: rgba(99, 102, 241, 0.14);
-        border: 1px solid rgba(99, 102, 241, 0.35);
-        color: #6366F1;
+        background: rgba(245, 158, 11, 0.14);
+        border: 1px solid rgba(245, 158, 11, 0.35);
+        color: #D97706;
         margin-bottom: 6px;
     }
 
     .sidebar-brand-title {
-        font-size: 1.65rem;
+        font-size: 1.55rem;
         font-weight: 900;
         letter-spacing: -0.6px;
-        background: linear-gradient(125deg, #0284C7 0%, #6366F1 45%, #EC4899 90%);
+        background: linear-gradient(125deg, #F59E0B 0%, #EF4444 50%, #7C3AED 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 2px 12px rgba(99, 102, 241, 0.35));
+        filter: drop-shadow(0 2px 10px rgba(239, 68, 68, 0.35));
         margin-bottom: 1.2rem;
     }
 
-    /* KOTAK TOMBOL MENU LEBIH BESAR & TINGGI */
+    /* TOMBOL MENU SIDEBAR BESAR */
     [data-testid="stSidebar"] .stButton > button {
         font-size: 1.22rem !important;
         min-height: 66px !important;
@@ -131,42 +131,44 @@ st.markdown("""
         text-align: left !important;
         justify-content: flex-start !important;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        border: 2px solid rgba(99, 102, 241, 0.25) !important;
-        background: rgba(255, 255, 255, 0.6) !important;
+        border: 2px solid rgba(239, 68, 68, 0.25) !important;
+        background: rgba(255, 255, 255, 0.75) !important;
         box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05) !important;
     }
 
-    /* TEKS & ICON MENU DIPERBESAR */
+    /* WARNA TEKS & ICON MENU BARU */
     [data-testid="stSidebar"] .stButton > button p,
     [data-testid="stSidebar"] .stButton > button span,
     [data-testid="stSidebar"] .stButton > button div {
-        font-size: 1.2rem !important;
+        font-size: 1.18rem !important;
         font-weight: 900 !important;
         letter-spacing: -0.2px !important;
         display: flex !important;
         align-items: center !important;
         gap: 12px !important;
-        background: linear-gradient(125deg, #0284C7 0%, #6366F1 50%, #EC4899 95%) !important;
+        background: linear-gradient(125deg, #D97706 0%, #DC2626 50%, #7C3AED 100%) !important;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
-        filter: drop-shadow(0 2px 8px rgba(99, 102, 241, 0.25)) !important;
+        filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.25)) !important;
     }
 
+    /* MENU AKTIF */
     [data-testid="stSidebar"] .stButton > button[kind="primary"],
     [data-testid="stSidebar"] .stButton > button[data-testid="baseButton-primary"] {
-        background: linear-gradient(135deg, rgba(2, 132, 199, 0.16) 0%, rgba(99, 102, 241, 0.24) 50%, rgba(236, 72, 153, 0.2) 100%) !important;
-        border: 2.2px solid #6366F1 !important;
-        box-shadow: 0 6px 24px rgba(99, 102, 241, 0.4), inset 0 0 14px rgba(236, 72, 153, 0.15) !important;
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(239, 68, 68, 0.2) 50%, rgba(124, 58, 237, 0.18) 100%) !important;
+        border: 2.2px solid #EF4444 !important;
+        box-shadow: 0 6px 24px rgba(239, 68, 68, 0.38), inset 0 0 14px rgba(245, 158, 11, 0.15) !important;
         transform: translateX(6px) scale(1.02) !important;
     }
 
+    /* MENU HOVER */
     [data-testid="stSidebar"] .stButton > button:hover {
         transform: translateX(6px) scale(1.02) !important;
-        border-color: #EC4899 !important;
-        box-shadow: 0 8px 24px rgba(236, 72, 153, 0.35) !important;
+        border-color: #F59E0B !important;
+        box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35) !important;
     }
 
-    /* 5. JUDUL UTAMA BERSENI */
+    /* 5. JUDUL UTAMA (HERO) K-ONE */
     .brand-hero {
         position: relative;
         text-align: center;
@@ -181,9 +183,9 @@ st.markdown("""
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 260px;
-        height: 80px;
-        background: radial-gradient(circle, rgba(99, 102, 241, 0.28) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 75%);
+        width: 290px;
+        height: 85px;
+        background: radial-gradient(circle, rgba(245, 158, 11, 0.28) 0%, rgba(239, 68, 68, 0.16) 50%, transparent 75%);
         filter: blur(24px);
         z-index: 0;
         pointer-events: none;
@@ -195,56 +197,55 @@ st.markdown("""
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        padding: 3px 12px;
-        font-size: 0.72rem;
+        padding: 4px 14px;
+        font-size: 0.74rem;
         font-weight: 800;
-        letter-spacing: 1px;
+        letter-spacing: 1.2px;
         text-transform: uppercase;
         border-radius: 999px;
-        background: rgba(99, 102, 241, 0.12);
-        border: 1px solid rgba(99, 102, 241, 0.28);
-        color: #6366F1;
+        background: rgba(245, 158, 11, 0.14);
+        border: 1px solid rgba(245, 158, 11, 0.35);
+        color: #D97706;
         margin-bottom: 6px;
-        backdrop-filter: blur(6px);
     }
 
     .brand-title {
         position: relative;
         z-index: 1;
-        font-size: 2.35rem;
+        font-size: 2.25rem;
         font-weight: 900;
         letter-spacing: -0.8px;
-        line-height: 1.1;
+        line-height: 1.15;
         margin: 0;
         display: inline-block;
-        background: linear-gradient(125deg, #0284C7 0%, #6366F1 45%, #EC4899 90%);
+        background: linear-gradient(125deg, #F59E0B 0%, #EF4444 48%, #7C3AED 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 4px 14px rgba(99, 102, 241, 0.35));
+        filter: drop-shadow(0 4px 16px rgba(239, 68, 68, 0.38));
     }
 
     .brand-title .pro-badge {
         font-size: 0.95rem;
         vertical-align: super;
-        margin-left: 4px;
-        padding: 2px 7px;
-        border-radius: 7px;
+        margin-left: 6px;
+        padding: 3px 8px;
+        border-radius: 8px;
         font-weight: 900;
-        letter-spacing: 0.5px;
-        background: linear-gradient(135deg, #EC4899, #8B5CF6);
+        letter-spacing: 0.6px;
+        background: linear-gradient(135deg, #EF4444, #F59E0B);
         color: #FFFFFF !important;
         -webkit-text-fill-color: #FFFFFF !important;
-        box-shadow: 0 2px 8px rgba(236, 72, 153, 0.4);
+        box-shadow: 0 3px 10px rgba(239, 68, 68, 0.45);
     }
 
     .brand-divider {
         position: relative;
         z-index: 1;
-        width: 48px;
+        width: 56px;
         height: 4px;
-        background: linear-gradient(90deg, #0284C7, #6366F1, #EC4899);
+        background: linear-gradient(90deg, #F59E0B, #EF4444, #7C3AED);
         border-radius: 99px;
-        margin: 6px auto 9px auto;
+        margin: 7px auto 10px auto;
     }
 
     .brand-sub {
@@ -293,9 +294,9 @@ st.markdown("""
         transition: all 0.2s ease;
     }
     .metric-card.highlight {
-        background: #EFF6FF;
-        border: 1.5px solid #93C5FD;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+        background: #FFF7ED;
+        border: 1.5px solid #FDBA74;
+        box-shadow: 0 4px 14px rgba(245, 158, 11, 0.12);
     }
     .metric-label {
         font-size: 0.68rem;
@@ -311,7 +312,7 @@ st.markdown("""
         margin-top: 3px;
     }
     .metric-card.highlight .metric-value {
-        color: #1D4ED8;
+        color: #EA580C;
     }
     .badge-hemat {
         display: inline-block;
@@ -324,20 +325,20 @@ st.markdown("""
         margin-top: 4px;
     }
 
-    /* 7. TOMBOL DOWNLOAD BESAR (ZIP) */
+    /* 7. TOMBOL UNDUH BESAR (ZIP) */
     [data-testid="stDownloadButton"] {
         margin-top: 8px;
         margin-bottom: 12px;
     }
     [data-testid="stDownloadButton"] > button {
-        background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #7C3AED 100%) !important;
+        background: linear-gradient(135deg, #F59E0B 0%, #EF4444 50%, #7C3AED 100%) !important;
         color: #FFFFFF !important;
         font-size: 1.05rem !important;
         font-weight: 800 !important;
         padding: 0.95rem 1.6rem !important;
         border-radius: 14px !important;
         border: none !important;
-        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45) !important;
+        box-shadow: 0 6px 20px rgba(239, 68, 68, 0.42) !important;
         transition: all 0.3s ease !important;
         display: flex !important;
         justify-content: center !important;
@@ -346,28 +347,28 @@ st.markdown("""
     }
     [data-testid="stDownloadButton"] > button:hover {
         transform: translateY(-2px) !important;
-        box-shadow: 0 10px 28px rgba(124, 58, 237, 0.55) !important;
+        box-shadow: 0 10px 28px rgba(239, 68, 68, 0.55) !important;
         color: #FFFFFF !important;
     }
 
-    /* 8. TOMBOL UNDUH SATUAN DI DALAM EXPANDER */
+    /* 8. TOMBOL UNDUH SATUAN */
     div[data-testid="stExpander"] [data-testid="stDownloadButton"] > button {
-        background: linear-gradient(135deg, #2563EB, #4F46E5) !important;
+        background: linear-gradient(135deg, #F59E0B, #EF4444) !important;
         color: #FFFFFF !important;
         font-size: 0.85rem !important;
         font-weight: 700 !important;
         padding: 0.45rem 0.9rem !important;
         border-radius: 10px !important;
         border: none !important;
-        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+        box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
         margin: 0 !important;
     }
     div[data-testid="stExpander"] [data-testid="stDownloadButton"] > button:hover {
         transform: translateY(-1px) !important;
-        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.45) !important;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.45) !important;
     }
 
-    /* 9. SPINNER BOLA MELAYANG DI TENGAH (HUD OVERLAY) */
+    /* 9. SPINNER BOLA MELAYANG (HUD) */
     .hud-overlay {
         position: fixed !important;
         top: 0 !important;
@@ -381,13 +382,12 @@ st.markdown("""
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        pointer-events: all !important;
     }
 
     .hud-card {
-        background: rgba(30, 41, 59, 0.95) !important;
-        border: 1.5px solid rgba(99, 102, 241, 0.45) !important;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.35) !important;
+        background: rgba(24, 24, 27, 0.95) !important;
+        border: 1.5px solid rgba(239, 68, 68, 0.45) !important;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(239, 68, 68, 0.35) !important;
         border-radius: 24px !important;
         padding: 26px 36px !important;
         display: flex !important;
@@ -419,10 +419,10 @@ st.markdown("""
         height: 100% !important;
         border-radius: 50% !important;
         border: 5px solid rgba(255, 255, 255, 0.08) !important;
-        border-top: 5px solid #0284C7 !important;
-        border-right: 5px solid #6366F1 !important;
-        border-bottom: 5px solid #EC4899 !important;
-        box-shadow: 0 0 16px rgba(99, 102, 241, 0.4) !important;
+        border-top: 5px solid #F59E0B !important;
+        border-right: 5px solid #EF4444 !important;
+        border-bottom: 5px solid #7C3AED !important;
+        box-shadow: 0 0 16px rgba(239, 68, 68, 0.45) !important;
         animation: hudSpin 0.9s linear infinite !important;
     }
 
@@ -434,7 +434,7 @@ st.markdown("""
     .hud-pct-text {
         font-size: 1.18rem !important;
         font-weight: 900 !important;
-        background: linear-gradient(135deg, #38BDF8, #EC4899) !important;
+        background: linear-gradient(135deg, #F59E0B, #EF4444) !important;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
         z-index: 2 !important;
@@ -451,7 +451,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ================= WADAH UTAMA SPINNER (GLOBAL ROOT SLOT) =================
+# ================= ROOT SLOT SPINNER =================
 hud_slot = st.empty()
 
 
@@ -465,11 +465,9 @@ def format_size(size_in_bytes):
     return f"{kb:.2f} KB"
 
 
-# ================= VISUAL SPINNER BOLA MUTER + PERSEN DI TENGAH =================
+# ================= VISUAL SPINNER HUD =================
 def show_download_loading(kategori="gambar", is_bundle=False, file_name=None):
-    """Menampilkan bola berputar di tengah layar dengan persen dan jeda bertahap"""
     nama_label = "Bundle ZIP" if is_bundle else (f"'{file_name}'" if file_name else "Berkas")
-    
     stages = [
         (15, f"Menyiapkan {nama_label}...", 0.4),
         (45, "Mengemas & Memadatkan...", 0.5),
@@ -477,7 +475,6 @@ def show_download_loading(kategori="gambar", is_bundle=False, file_name=None):
         (95, "Mengirim ke Perangkat...", 0.5),
         (100, "Selesai!", 0.4)
     ]
-    
     for pct, msg, delay in stages:
         clean_html = f'<div class="hud-overlay"><div class="hud-card"><div class="hud-spinner-wrap"><div class="hud-spinner-ring"></div><span class="hud-pct-text">{pct}%</span></div><div class="hud-msg-text">{msg}</div></div></div>'
         hud_slot.markdown(clean_html, unsafe_allow_html=True)
@@ -518,11 +515,11 @@ if st.session_state.close_sidebar_trigger:
     """, height=0, width=0)
 
 
-# ================= MENU SIDEBAR (ICON BARU & UKURAN BESAR) =================
+# ================= MENU SIDEBAR K-ONE =================
 with st.sidebar:
     st.markdown("""
-        <div class="sidebar-brand-pill">⚡ PILIH NAVIGASI</div>
-        <div class="sidebar-brand-title">Menu Pilihan</div>
+        <div class="sidebar-brand-pill">⚡ K-ONE SUITE</div>
+        <div class="sidebar-brand-title">K-ONE MENU</div>
     """, unsafe_allow_html=True)
     
     daftar_menu = [
@@ -540,11 +537,11 @@ with st.sidebar:
             st.rerun()
 
 
-# ================= HEADER UTAMA =================
+# ================= HEADER UTAMA K-ONE CONVERTPRO PDF =================
 st.markdown(f"""
 <div class="brand-hero">
-    <div class="brand-pill">⚡ NEXT-GEN COMPRESSION</div><br>
-    <div class="brand-title">Compress<span class="pro-badge">PRO</span></div>
+    <div class="brand-pill">⚡ ULTIMATE PDF ENGINE</div><br>
+    <div class="brand-title">K-ONE <span class="pro-badge">CONVERTPRO PDF</span></div>
     <div class="brand-divider"></div>
     <div class="brand-sub">
         <span class="pulse-dot"></span>
@@ -554,7 +551,7 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 
-# ================= ENGINE KOMPRESI GAMBAR INDIVIDUAL =================
+# ================= ENGINE KOMPRESI GAMBAR =================
 def compress_single_image(raw_bytes, quality=70, scale=100):
     bytes_asli = len(raw_bytes)
     try:
@@ -586,7 +583,7 @@ def compress_single_image(raw_bytes, quality=70, scale=100):
         return raw_bytes, "Error"
 
 
-# ================= ENGINE KOMPRESI PDF INDIVIDUAL =================
+# ================= ENGINE KOMPRESI PDF =================
 def compress_single_pdf(raw_bytes, quality_slider=70):
     bytes_asli = len(raw_bytes)
     try:
@@ -655,7 +652,7 @@ def compress_single_pdf(raw_bytes, quality_slider=70):
         return raw_bytes, 0
 
 
-# ================= ENGINE KOMPRESI OFFICE INDIVIDUAL =================
+# ================= ENGINE KOMPRESI OFFICE =================
 def compress_single_office(raw_bytes, quality_slider=70):
     bytes_asli = len(raw_bytes)
     try:
@@ -716,7 +713,7 @@ def compress_single_office(raw_bytes, quality_slider=70):
         return raw_bytes
 
 
-# ================= 1. MENU KOMPRES GAMBAR (BATCH) =================
+# ================= 1. MENU KOMPRES GAMBAR =================
 if st.session_state.active_menu == "📸  Kompres Foto & Gambar":
     files_img = st.file_uploader(
         "Upload Foto / Gambar (Bisa pilih banyak sekaligus)", 
@@ -784,7 +781,7 @@ if st.session_state.active_menu == "📸  Kompres Foto & Gambar":
         btn_zip = st.download_button(
             label=f"⬇️ DOWNLOAD SEMUA ({len(files_img)} GAMBAR) - ZIP ({format_size(len(zip_bytes))})",
             data=zip_bytes,
-            file_name="CompressPro_Images_Bundle.zip",
+            file_name="K-ONE_Images_Bundle.zip",
             mime="application/zip",
             use_container_width=True,
             key="btn_download_zip_img"
@@ -812,7 +809,7 @@ if st.session_state.active_menu == "📸  Kompres Foto & Gambar":
                         show_download_loading(kategori="gambar", is_bundle=False, file_name=item["name"])
 
 
-# ================= 2. MENU KOMPRES PDF (BATCH) =================
+# ================= 2. MENU KOMPRES PDF =================
 elif st.session_state.active_menu == "📑  Kompres Dokumen PDF":
     files_pdf = st.file_uploader(
         "Upload Dokumen PDF (Bisa pilih banyak sekaligus)", 
@@ -882,7 +879,7 @@ elif st.session_state.active_menu == "📑  Kompres Dokumen PDF":
         btn_zip_pdf = st.download_button(
             label=f"⬇️ DOWNLOAD SEMUA ({len(files_pdf)} PDF) - ZIP ({format_size(len(zip_bytes_pdf))})",
             data=zip_bytes_pdf,
-            file_name="CompressPro_PDF_Bundle.zip",
+            file_name="K-ONE_PDF_Bundle.zip",
             mime="application/zip",
             use_container_width=True,
             key="btn_download_zip_pdf"
@@ -910,7 +907,7 @@ elif st.session_state.active_menu == "📑  Kompres Dokumen PDF":
                         show_download_loading(kategori="pdf", is_bundle=False, file_name=item["name"])
 
 
-# ================= 3. MENU KOMPRES OFFICE (BATCH) =================
+# ================= 3. MENU KOMPRES OFFICE =================
 elif st.session_state.active_menu == "💼  Kompres Berkas Office":
     files_off = st.file_uploader(
         "Upload Dokumen Office (.docx, .pptx, .xlsx) (Bisa pilih banyak)", 
@@ -979,7 +976,7 @@ elif st.session_state.active_menu == "💼  Kompres Berkas Office":
         btn_zip_off = st.download_button(
             label=f"⬇️ DOWNLOAD SEMUA ({len(files_off)} DOKUMEN) - ZIP ({format_size(len(zip_bytes_off))})",
             data=zip_bytes_off,
-            file_name="CompressPro_Office_Bundle.zip",
+            file_name="K-ONE_Office_Bundle.zip",
             mime="application/zip",
             use_container_width=True,
             key="btn_download_zip_off"
